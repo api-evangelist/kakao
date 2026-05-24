@@ -1,0 +1,372 @@
+openapi: 3.1.0
+info:
+  title: Kakao Login REST API
+  description: >-
+    REST API for Kakao Login (OAuth 2.0 / OpenID Connect), Kakao user
+    management, consent and service-terms management, and OIDC discovery.
+    Apps authenticate users with Kakao OAuth and then call the kapi.kakao.com
+    user endpoints with a Bearer access token or, for app-level operations,
+    the Kakao app Admin Key.
+  version: 2.0.0
+  termsOfService: https://www.kakao.com/policy/terms
+  contact:
+    name: Kakao Developers
+    url: https://developers.kakao.com/
+  license:
+    name: Proprietary
+    url: https://www.kakao.com/policy/terms
+
+servers:
+  - url: https://kauth.kakao.com
+    description: Kakao OAuth (kauth) endpoint
+  - url: https://kapi.kakao.com
+    description: Kakao API (kapi) endpoint
+
+tags:
+  - name: OAuth
+    description: Kakao Login OAuth 2.0 authorization, token, and logout flows.
+  - name: User
+    description: Logged-in user information, scopes, and account linking.
+  - name: Service Terms
+    description: Manage Kakao Sync service-terms consent.
+  - name: OIDC
+    description: OpenID Connect discovery, JWKS, and user info.
+
+paths:
+  /oauth/authorize:
+    get:
+      operationId: oauthAuthorize
+      summary: Request OAuth authorization code
+      description: Display the Kakao Login consent screen and request an authorization code.
+      tags:
+        - OAuth
+      servers:
+        - url: https://kauth.kakao.com
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          description: REST API key of the registered Kakao app.
+          schema:
+            type: string
+        - name: redirect_uri
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uri
+        - name: response_type
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - code
+        - name: scope
+          in: query
+          schema:
+            type: string
+      responses:
+        '302':
+          description: Redirect to the configured redirect_uri carrying the authorization code.
+  /oauth/token:
+    post:
+      operationId: oauthToken
+      summary: Exchange or refresh OAuth tokens
+      description: Exchange an authorization code for access and refresh tokens, or refresh an existing access token.
+      tags:
+        - OAuth
+      servers:
+        - url: https://kauth.kakao.com
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                    - authorization_code
+                    - refresh_token
+                client_id:
+                  type: string
+                redirect_uri:
+                  type: string
+                  format: uri
+                code:
+                  type: string
+                refresh_token:
+                  type: string
+                client_secret:
+                  type: string
+              required:
+                - grant_type
+                - client_id
+      responses:
+        '200':
+          description: OAuth token payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /oauth/logout:
+    get:
+      operationId: oauthLogout
+      summary: Logout from Kakao
+      description: Log the user out of the service and the Kakao Account.
+      tags:
+        - OAuth
+      servers:
+        - url: https://kauth.kakao.com
+      parameters:
+        - name: client_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: logout_redirect_uri
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uri
+      responses:
+        '302':
+          description: Redirect to the configured logout_redirect_uri after logout.
+  /v2/user/me:
+    get:
+      operationId: getUserMe
+      summary: Retrieve current user info
+      description: Return profile and account information for the access-token holder.
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User information.
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      operationId: getUserMePost
+      summary: Retrieve current user info (POST)
+      description: POST variant of /v2/user/me that accepts a form-encoded property filter.
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                property_keys:
+                  type: string
+                secure_resource:
+                  type: boolean
+      responses:
+        '200':
+          description: User information.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v2/app/users:
+    get:
+      operationId: listAppUsers
+      summary: Retrieve multiple users' info
+      description: Return profile and account information for multiple users (Admin Key required).
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - adminKey: []
+      parameters:
+        - name: target_ids
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User information list.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/user/logout:
+    post:
+      operationId: userLogout
+      summary: Invalidate user tokens
+      description: Invalidate the current user's Kakao tokens issued for this app.
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Logout result.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/user/unlink:
+    post:
+      operationId: userUnlink
+      summary: Unlink user from the app
+      description: Unlink the user's Kakao account from the calling app.
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+        - adminKey: []
+      responses:
+        '200':
+          description: Unlink result.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v2/user/scopes:
+    get:
+      operationId: getUserScopes
+      summary: Check user consent scopes
+      description: Return the list of consents currently granted by the user.
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Scope payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v2/user/revoke/scopes:
+    post:
+      operationId: revokeUserScopes
+      summary: Revoke specific user scopes
+      description: Revoke one or more consents granted by the user.
+      tags:
+        - User
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                scopes:
+                  type: string
+              required:
+                - scopes
+      responses:
+        '200':
+          description: Revoke result.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v2/user/service_terms:
+    get:
+      operationId: getServiceTerms
+      summary: Check service-terms consent
+      description: Return Kakao Sync service-terms consent for the user.
+      tags:
+        - Service Terms
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Service-terms consent payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/oidc/userinfo:
+    get:
+      operationId: oidcUserInfo
+      summary: OIDC user info
+      description: Retrieve OpenID Connect user information for the authenticated user.
+      tags:
+        - OIDC
+      servers:
+        - url: https://kapi.kakao.com
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OIDC user info payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /.well-known/openid-configuration:
+    get:
+      operationId: oidcDiscovery
+      summary: OIDC discovery document
+      description: Return the OpenID Connect discovery metadata for Kakao Login.
+      tags:
+        - OIDC
+      servers:
+        - url: https://kauth.kakao.com
+      responses:
+        '200':
+          description: OIDC discovery document.
+          content:
+            application/json:
+              schema:
+                type: object
+  /.well-known/jwks.json:
+    get:
+      operationId: oidcJwks
+      summary: OIDC public signing keys
+      description: Return the public JWKS used to verify Kakao-issued ID tokens.
+      tags:
+        - OIDC
+      servers:
+        - url: https://kauth.kakao.com
+      responses:
+        '200':
+          description: JWKS payload.
+          content:
+            application/json:
+              schema:
+                type: object
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Kakao access token
+      description: Kakao access token issued by /oauth/token, sent as "Bearer {access_token}".
+    adminKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Kakao app Admin Key sent as "KakaoAK {admin_key}" for server-to-server calls.

@@ -1,0 +1,327 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kakao Login REST API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OAuth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request OAuth authorization code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/oauth/authorize",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query",
+                "description": "REST API key of the registered Kakao app."
+              },
+              {
+                "name": "redirect_uri",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "response_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Display the Kakao Login consent screen and request an authorization code."
+        },
+        {
+          "info": {
+            "name": "Exchange or refresh OAuth tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/oauth/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "redirect_uri",
+                  "value": ""
+                },
+                {
+                  "name": "code",
+                  "value": ""
+                },
+                {
+                  "name": "refresh_token",
+                  "value": ""
+                },
+                {
+                  "name": "client_secret",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Exchange an authorization code for access and refresh tokens, or refresh an existing access token."
+        },
+        {
+          "info": {
+            "name": "Logout from Kakao",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/oauth/logout",
+            "params": [
+              {
+                "name": "client_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "logout_redirect_uri",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Log the user out of the service and the Kakao Account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve current user info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/user/me",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return profile and account information for the access-token holder."
+        },
+        {
+          "info": {
+            "name": "Retrieve current user info (POST)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v2/user/me",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "property_keys",
+                  "value": ""
+                },
+                {
+                  "name": "secure_resource",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "POST variant of /v2/user/me that accepts a form-encoded property filter."
+        },
+        {
+          "info": {
+            "name": "Retrieve multiple users' info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/app/users",
+            "params": [
+              {
+                "name": "target_ids",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Return profile and account information for multiple users (Admin Key required)."
+        },
+        {
+          "info": {
+            "name": "Invalidate user tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v1/user/logout",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Invalidate the current user's Kakao tokens issued for this app."
+        },
+        {
+          "info": {
+            "name": "Unlink user from the app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v1/user/unlink",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Unlink the user's Kakao account from the calling app."
+        },
+        {
+          "info": {
+            "name": "Check user consent scopes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/user/scopes",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return the list of consents currently granted by the user."
+        },
+        {
+          "info": {
+            "name": "Revoke specific user scopes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v2/user/revoke/scopes",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "scopes",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Revoke one or more consents granted by the user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Service Terms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check service-terms consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/user/service_terms",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return Kakao Sync service-terms consent for the user."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OIDC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OIDC user info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v1/oidc/userinfo",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve OpenID Connect user information for the authenticated user."
+        },
+        {
+          "info": {
+            "name": "OIDC discovery document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/.well-known/openid-configuration"
+          },
+          "docs": "Return the OpenID Connect discovery metadata for Kakao Login."
+        },
+        {
+          "info": {
+            "name": "OIDC public signing keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/.well-known/jwks.json"
+          },
+          "docs": "Return the public JWKS used to verify Kakao-issued ID tokens."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

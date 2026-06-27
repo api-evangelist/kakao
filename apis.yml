@@ -353,7 +353,7 @@ authentication:
   - type: SecretKey
     description: KakaoPay APIs authenticate with merchant-issued Secret Keys for payment, cancellation, and refund operations.
 common:
-  - type: CorporateWebsite
+  - type: Website
     url: https://www.kakaocorp.com/
   - type: DeveloperPortal
     url: https://developers.kakao.com/

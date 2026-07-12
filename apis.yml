@@ -353,6 +353,10 @@ authentication:
   - type: SecretKey
     description: KakaoPay APIs authenticate with merchant-issued Secret Keys for payment, cancellation, and refund operations.
 common:
+  - type: DomainSecurity
+    url: security/kakao-domain-security.yml
+  - type: Authentication
+    url: authentication/kakao-authentication.yml
   - type: Website
     url: https://www.kakaocorp.com/
   - type: DeveloperPortal
@@ -383,6 +387,8 @@ common:
     url: https://careers.kakao.com/
   - type: LinkedIn
     url: https://www.linkedin.com/company/kakaocorp/
+  - url: https://tech.kakao.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,0 +1,24 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/kakao-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: Kakao access token
+  description: Kakao access token issued by /oauth/token, sent as "Bearer {access_token}".
+  sources:
+  - openapi/kakao-openapi.yml
+- name: adminKey
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Kakao app Admin Key sent as "KakaoAK {admin_key}" for server-to-server calls.
+  sources:
+  - openapi/kakao-openapi.yml

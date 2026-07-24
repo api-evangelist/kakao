@@ -1,0 +1,135 @@
+openapi: 3.1.0
+info:
+  title: Kakao Login REST OAuth API
+  description: REST API for Kakao Login (OAuth 2.0 / OpenID Connect), Kakao user management, consent and service-terms management, and OIDC discovery. Apps authenticate users with Kakao OAuth and then call the kapi.kakao.com user endpoints with a Bearer access token or, for app-level operations, the Kakao app Admin Key.
+  version: 2.0.0
+  termsOfService: https://www.kakao.com/policy/terms
+  contact:
+    name: Kakao Developers
+    url: https://developers.kakao.com/
+  license:
+    name: Proprietary
+    url: https://www.kakao.com/policy/terms
+servers:
+- url: https://kauth.kakao.com
+  description: Kakao OAuth (kauth) endpoint
+- url: https://kapi.kakao.com
+  description: Kakao API (kapi) endpoint
+tags:
+- name: OAuth
+  description: Kakao Login OAuth 2.0 authorization, token, and logout flows.
+paths:
+  /oauth/authorize:
+    get:
+      operationId: oauthAuthorize
+      summary: Request OAuth authorization code
+      description: Display the Kakao Login consent screen and request an authorization code.
+      tags:
+      - OAuth
+      servers:
+      - url: https://kauth.kakao.com
+      parameters:
+      - name: client_id
+        in: query
+        required: true
+        description: REST API key of the registered Kakao app.
+        schema:
+          type: string
+      - name: redirect_uri
+        in: query
+        required: true
+        schema:
+          type: string
+          format: uri
+      - name: response_type
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - code
+      - name: scope
+        in: query
+        schema:
+          type: string
+      responses:
+        '302':
+          description: Redirect to the configured redirect_uri carrying the authorization code.
+  /oauth/token:
+    post:
+      operationId: oauthToken
+      summary: Exchange or refresh OAuth tokens
+      description: Exchange an authorization code for access and refresh tokens, or refresh an existing access token.
+      tags:
+      - OAuth
+      servers:
+      - url: https://kauth.kakao.com
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                  - authorization_code
+                  - refresh_token
+                client_id:
+                  type: string
+                redirect_uri:
+                  type: string
+                  format: uri
+                code:
+                  type: string
+                refresh_token:
+                  type: string
+                client_secret:
+                  type: string
+              required:
+              - grant_type
+              - client_id
+      responses:
+        '200':
+          description: OAuth token payload.
+          content:
+            application/json:
+              schema:
+                type: object
+  /oauth/logout:
+    get:
+      operationId: oauthLogout
+      summary: Logout from Kakao
+      description: Log the user out of the service and the Kakao Account.
+      tags:
+      - OAuth
+      servers:
+      - url: https://kauth.kakao.com
+      parameters:
+      - name: client_id
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: logout_redirect_uri
+        in: query
+        required: true
+        schema:
+          type: string
+          format: uri
+      responses:
+        '302':
+          description: Redirect to the configured logout_redirect_uri after logout.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Kakao access token
+      description: Kakao access token issued by /oauth/token, sent as "Bearer {access_token}".
+    adminKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Kakao app Admin Key sent as "KakaoAK {admin_key}" for server-to-server calls.

@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Kakao Login REST OAuth Service Terms API
+  description: REST API for Kakao Login (OAuth 2.0 / OpenID Connect), Kakao user management, consent and service-terms management, and OIDC discovery. Apps authenticate users with Kakao OAuth and then call the kapi.kakao.com user endpoints with a Bearer access token or, for app-level operations, the Kakao app Admin Key.
+  version: 2.0.0
+  termsOfService: https://www.kakao.com/policy/terms
+  contact:
+    name: Kakao Developers
+    url: https://developers.kakao.com/
+  license:
+    name: Proprietary
+    url: https://www.kakao.com/policy/terms
+servers:
+- url: https://kauth.kakao.com
+  description: Kakao OAuth (kauth) endpoint
+- url: https://kapi.kakao.com
+  description: Kakao API (kapi) endpoint
+tags:
+- name: Service Terms
+  description: Manage Kakao Sync service-terms consent.
+paths:
+  /v2/user/service_terms:
+    get:
+      operationId: getServiceTerms
+      summary: Check service-terms consent
+      description: Return Kakao Sync service-terms consent for the user.
+      tags:
+      - Service Terms
+      servers:
+      - url: https://kapi.kakao.com
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Service-terms consent payload.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Kakao access token
+      description: Kakao access token issued by /oauth/token, sent as "Bearer {access_token}".
+    adminKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Kakao app Admin Key sent as "KakaoAK {admin_key}" for server-to-server calls.

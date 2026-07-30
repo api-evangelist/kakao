@@ -14,9 +14,22 @@ description: |
   Kakao Enterprise / KakaoCloud each operate additional partner-
   facing developer surfaces.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: Public
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kakao.png
 tags:
   - Messaging
   - Maps
@@ -33,285 +46,367 @@ created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.20'
 apis:
-  - aid: kakao:kakao-login
-    name: Kakao Login (OAuth 2.0) API
-    description: |
-      Kakao Login is Korea's most widely used social-identity
-      provider, built on OAuth 2.0 / OpenID Connect. The API
-      issues access and refresh tokens, returns user profile
-      attributes (nickname, profile image, email, gender, age
-      range), and supports auto-linking to in-app accounts.
-    humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
-    baseURL: https://kapi.kakao.com
-    tags:
-      - Identity
-      - OAuth2
-      - Login
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/kakaologin/common
-      - type: RESTReference
-        url: https://developers.kakao.com/docs/latest/en/kakaologin/rest-api
-  - aid: kakao:kakao-sync
-    name: Kakao Sync API
-    description: |
-      Kakao Sync extends Kakao Login with a one-click signup
-      experience that simultaneously creates an in-app account
-      and (optionally) adds a KakaoTalk Channel friendship for
-      Korean services.
-    humanURL: https://developers.kakao.com/docs/latest/en/kakaosync/common
-    baseURL: https://kapi.kakao.com
-    tags:
-      - Identity
-      - Onboarding
-      - KakaoTalk
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/kakaosync/common
-  - aid: kakao:kakaotalk-share
-    name: KakaoTalk Sharing API
-    description: |
-      KakaoTalk Sharing lets external apps and websites share rich
-      "Feed", "List", "Location", "Calendar", "Commerce", and
-      custom-template messages into KakaoTalk chats.
-    humanURL: https://developers.kakao.com/docs/latest/en/message/common
-    baseURL: https://kapi.kakao.com
-    tags:
-      - Messaging
-      - Sharing
-      - KakaoTalk
-      - Templates
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/message/common
-  - aid: kakao:kakaotalk-message
-    name: KakaoTalk Message API
-    description: |
-      KakaoTalk Message sends template-based messages from a
-      Kakao-Linked app to the authenticated user themselves or
-      to consenting KakaoTalk friends.
-    humanURL: https://developers.kakao.com/docs/latest/en/message/rest-api
-    baseURL: https://kapi.kakao.com
-    tags:
-      - Messaging
-      - KakaoTalk
-      - Notifications
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/message/rest-api
-  - aid: kakao:kakaotalk-channel
-    name: KakaoTalk Channel API
-    description: |
-      KakaoTalk Channel APIs manage a brand's Channel
-      relationship with users — including add-friend status,
-      Alimtalk-style notification messages (delivered via
-      Kakao's BizMessage partners), and consult routing.
-    humanURL: https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common
-    baseURL: https://kapi.kakao.com
-    tags:
-      - KakaoTalk
-      - Channel
-      - Notifications
-      - BizMessage
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common
-  - aid: kakao:kakaotalk-friends
-    name: KakaoTalk Friends API
-    description: |
-      Returns the list of KakaoTalk friends who have also signed
-      into a Kakao-Linked app, for friend-picker, invite, and
-      social-feature experiences subject to user consent.
-    humanURL: https://developers.kakao.com/docs/latest/en/message/rest-api#friend
-    baseURL: https://kapi.kakao.com
-    tags:
-      - KakaoTalk
-      - Friends
-      - Social Graph
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/message/rest-api#friend
-  - aid: kakao:kakaostory
-    name: KakaoStory API
-    description: |
-      KakaoStory APIs let apps publish posts and read user
-      content on Kakao's social timeline product (legacy but
-      still supported in Korea).
-    humanURL: https://developers.kakao.com/docs/latest/en/kakaostory/common
-    baseURL: https://kapi.kakao.com
-    tags:
-      - Social
-      - KakaoStory
-      - Timeline
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/kakaostory/common
-  - aid: kakao:local
-    name: Kakao Local API
-    description: |
-      Kakao Local API offers address-to-coordinate (and reverse)
-      geocoding, keyword and category place search, and
-      administrative-region lookup for Korean addresses and POIs.
-    humanURL: https://developers.kakao.com/docs/latest/en/local/dev-guide
-    baseURL: https://dapi.kakao.com
-    tags:
-      - Local Search
-      - Geocoding
-      - Places
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/local/dev-guide
-  - aid: kakao:kakaomap-web
-    name: KakaoMap Web / JavaScript SDK
-    description: |
-      KakaoMap exposes Korean tile maps, markers, overlays,
-      static maps, and roadview / panorama services for web and
-      mobile applications.
-    humanURL: https://apis.map.kakao.com/web/documentation/
-    baseURL: https://dapi.kakao.com
-    tags:
-      - Maps
-      - Tiles
-      - Roadview
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://apis.map.kakao.com/web/documentation/
-  - aid: kakao:kakaonavi
-    name: KakaoNavi (Driving Directions) API
-    description: |
-      KakaoNavi exposes driving directions, multi-waypoint route
-      planning, ETA, and Future Driving directions (predictive
-      ETA), and a native "Send to Kakao Navi" handoff for Korean
-      mobile apps.
-    humanURL: https://developers.kakao.com/docs/latest/en/kakaonavi/common
-    baseURL: https://apis-navi.kakaomobility.com
-    tags:
-      - Navigation
-      - Directions
-      - Driving
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/kakaonavi/common
-  - aid: kakao:daum-search
-    name: Daum Search API
-    description: |
-      Daum Search API returns search results from Daum's web,
-      vClip video, image, blog, book, café, and Q&A indexes,
-      complementing Kakao Local for content discovery.
-    humanURL: https://developers.kakao.com/docs/latest/en/daum-search/common
-    baseURL: https://dapi.kakao.com
-    tags:
-      - Search
-      - Daum
-      - Web
-      - Images
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/daum-search/common
-  - aid: kakao:kakaopay-online
-    name: KakaoPay Online (Easy-Pay) API
-    description: |
-      KakaoPay Online (also known as KakaoPay Easy-Pay) lets
-      online merchants accept KakaoPay wallet payments for
-      one-time and subscription purchases, with order create,
-      approve, cancel, and refund operations.
-    humanURL: https://developers.kakaopay.com/docs/payment/online/single-payment
-    baseURL: https://open-api.kakaopay.com
-    tags:
-      - Payments
-      - KakaoPay
-      - Checkout
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://developers.kakaopay.com/docs/payment/online/single-payment
-  - aid: kakao:kakaopay-subscription
-    name: KakaoPay Subscription Payments API
-    description: |
-      Subscription Payments API enables recurring KakaoPay
-      billing for SaaS, content, and membership models — using
-      a one-time SID (subscription ID) handshake followed by
-      server-side recurring charge calls.
-    humanURL: https://developers.kakaopay.com/docs/payment/online/subscription-payment
-    baseURL: https://open-api.kakaopay.com
-    tags:
-      - Payments
-      - Subscriptions
-      - Recurring
-      - KakaoPay
-    properties:
-      - type: Documentation
-        url: https://developers.kakaopay.com/docs/payment/online/subscription-payment
-  - aid: kakao:kakaopay-pg
-    name: KakaoPay PG (Payment Gateway) API
-    description: |
-      KakaoPay PG is the full Korean payment-gateway product
-      offering card, bank-transfer, point, and KakaoPay
-      wallet acceptance for enterprise merchants.
-    humanURL: https://developers.kakaopay.com/docs/payment/pg
-    baseURL: https://open-api.kakaopay.com
-    tags:
-      - Payment Gateway
-      - Cards
-      - Bank Transfer
-      - Korea
-    properties:
-      - type: Documentation
-        url: https://developers.kakaopay.com/docs/payment/pg
-  - aid: kakao:kogpt
-    name: KoGPT API
-    description: |
-      KoGPT is Kakao Brain's Korean-language large language model.
-      The KoGPT API provides text generation, summarization,
-      paraphrasing, and classification for Korean text.
-    humanURL: https://developers.kakao.com/docs/latest/en/kogpt/rest-api
-    baseURL: https://api.kakaobrain.com
-    tags:
-      - LLM
-      - Generative AI
-      - Korean
-      - KoGPT
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/kogpt/rest-api
-  - aid: kakao:karlo
-    name: Karlo (Text-to-Image) API
-    description: |
-      Karlo is Kakao Brain's diffusion-based text-to-image
-      generation API, supporting Korean and English prompts and
-      multiple aspect ratios.
-    humanURL: https://developers.kakao.com/docs/latest/en/karlo/rest-api
-    baseURL: https://api.kakaobrain.com
-    tags:
-      - Text-to-Image
-      - Generative AI
-      - Diffusion
-      - Karlo
-    properties:
-      - type: Documentation
-        url: https://developers.kakao.com/docs/latest/en/karlo/rest-api
-  - aid: kakao:kakaomobility-business
-    name: KakaoMobility Business API
-    description: |
-      KakaoMobility's Business API powers KakaoT corporate
-      mobility — letting enterprise platforms book Kakao T taxi
-      rides, manage corporate accounts, and reconcile employee
-      trips for expense and HR systems.
-    humanURL: https://business.kakaomobility.com/
-    baseURL: https://api.kakaomobility.com
-    tags:
-      - Mobility
-      - Taxi
-      - Corporate
-      - Korea
-    properties:
-      - type: ProductPage
-        url: https://business.kakaomobility.com/
+- aid: kakao:kakao-login
+  name: Kakao Login (OAuth 2.0) API
+  description: >
+    Kakao Login is Korea's most widely used social-identity
+
+    provider, built on OAuth 2.0 / OpenID Connect. The API
+
+    issues access and refresh tokens, returns user profile
+
+    attributes (nickname, profile image, email, gender, age
+
+    range), and supports auto-linking to in-app accounts.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - Identity
+  - OAuth2
+  - Login
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  - type: RESTReference
+    url: https://developers.kakao.com/docs/latest/en/kakaologin/rest-api
+- aid: kakao:kakao-sync
+  name: Kakao Sync API
+  description: >
+    Kakao Sync extends Kakao Login with a one-click signup
+
+    experience that simultaneously creates an in-app account
+
+    and (optionally) adds a KakaoTalk Channel friendship for
+
+    Korean services.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaosync/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - Identity
+  - Onboarding
+  - KakaoTalk
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/kakaosync/common
+- aid: kakao:kakaotalk-share
+  name: KakaoTalk Sharing API
+  description: >
+    KakaoTalk Sharing lets external apps and websites share rich
+
+    "Feed", "List", "Location", "Calendar", "Commerce", and
+
+    custom-template messages into KakaoTalk chats.
+  humanURL: https://developers.kakao.com/docs/latest/en/message/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - Messaging
+  - Sharing
+  - KakaoTalk
+  - Templates
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/message/common
+- aid: kakao:kakaotalk-message
+  name: KakaoTalk Message API
+  description: >
+    KakaoTalk Message sends template-based messages from a
+
+    Kakao-Linked app to the authenticated user themselves or
+
+    to consenting KakaoTalk friends.
+  humanURL: https://developers.kakao.com/docs/latest/en/message/rest-api
+  baseURL: https://kapi.kakao.com
+  tags:
+  - Messaging
+  - KakaoTalk
+  - Notifications
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/message/rest-api
+- aid: kakao:kakaotalk-channel
+  name: KakaoTalk Channel API
+  description: >
+    KakaoTalk Channel APIs manage a brand's Channel
+
+    relationship with users — including add-friend status,
+
+    Alimtalk-style notification messages (delivered via
+
+    Kakao's BizMessage partners), and consult routing.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - KakaoTalk
+  - Channel
+  - Notifications
+  - BizMessage
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common
+- aid: kakao:kakaotalk-friends
+  name: KakaoTalk Friends API
+  description: >
+    Returns the list of KakaoTalk friends who have also signed
+
+    into a Kakao-Linked app, for friend-picker, invite, and
+
+    social-feature experiences subject to user consent.
+  humanURL: https://developers.kakao.com/docs/latest/en/message/rest-api#friend
+  baseURL: https://kapi.kakao.com
+  tags:
+  - KakaoTalk
+  - Friends
+  - Social Graph
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/message/rest-api#friend
+- aid: kakao:kakaostory
+  name: KakaoStory API
+  description: >
+    KakaoStory APIs let apps publish posts and read user
+
+    content on Kakao's social timeline product (legacy but
+
+    still supported in Korea).
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaostory/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - Social
+  - KakaoStory
+  - Timeline
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/kakaostory/common
+- aid: kakao:local
+  name: Kakao Local API
+  description: >
+    Kakao Local API offers address-to-coordinate (and reverse)
+
+    geocoding, keyword and category place search, and
+
+    administrative-region lookup for Korean addresses and POIs.
+  humanURL: https://developers.kakao.com/docs/latest/en/local/dev-guide
+  baseURL: https://dapi.kakao.com
+  tags:
+  - Local Search
+  - Geocoding
+  - Places
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/local/dev-guide
+- aid: kakao:kakaomap-web
+  name: KakaoMap Web / JavaScript SDK
+  description: >
+    KakaoMap exposes Korean tile maps, markers, overlays,
+
+    static maps, and roadview / panorama services for web and
+
+    mobile applications.
+  humanURL: https://apis.map.kakao.com/web/documentation/
+  baseURL: https://dapi.kakao.com
+  tags:
+  - Maps
+  - Tiles
+  - Roadview
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://apis.map.kakao.com/web/documentation/
+- aid: kakao:kakaonavi
+  name: KakaoNavi (Driving Directions) API
+  description: >
+    KakaoNavi exposes driving directions, multi-waypoint route
+
+    planning, ETA, and Future Driving directions (predictive
+
+    ETA), and a native "Send to Kakao Navi" handoff for Korean
+
+    mobile apps.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaonavi/common
+  baseURL: https://apis-navi.kakaomobility.com
+  tags:
+  - Navigation
+  - Directions
+  - Driving
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/kakaonavi/common
+- aid: kakao:daum-search
+  name: Daum Search API
+  description: >
+    Daum Search API returns search results from Daum's web,
+
+    vClip video, image, blog, book, café, and Q&A indexes,
+
+    complementing Kakao Local for content discovery.
+  humanURL: https://developers.kakao.com/docs/latest/en/daum-search/common
+  baseURL: https://dapi.kakao.com
+  tags:
+  - Search
+  - Daum
+  - Web
+  - Images
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/daum-search/common
+- aid: kakao:kakaopay-online
+  name: KakaoPay Online (Easy-Pay) API
+  description: >
+    KakaoPay Online (also known as KakaoPay Easy-Pay) lets
+
+    online merchants accept KakaoPay wallet payments for
+
+    one-time and subscription purchases, with order create,
+
+    approve, cancel, and refund operations.
+  humanURL: https://developers.kakaopay.com/docs/payment/online/single-payment
+  baseURL: https://open-api.kakaopay.com
+  tags:
+  - Payments
+  - KakaoPay
+  - Checkout
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://developers.kakaopay.com/docs/payment/online/single-payment
+- aid: kakao:kakaopay-subscription
+  name: KakaoPay Subscription Payments API
+  description: >
+    Subscription Payments API enables recurring KakaoPay
+
+    billing for SaaS, content, and membership models — using
+
+    a one-time SID (subscription ID) handshake followed by
+
+    server-side recurring charge calls.
+  humanURL: https://developers.kakaopay.com/docs/payment/online/subscription-payment
+  baseURL: https://open-api.kakaopay.com
+  tags:
+  - Payments
+  - Subscriptions
+  - Recurring
+  - KakaoPay
+  properties:
+  - type: Documentation
+    url: https://developers.kakaopay.com/docs/payment/online/subscription-payment
+- aid: kakao:kakaopay-pg
+  name: KakaoPay PG (Payment Gateway) API
+  description: >
+    KakaoPay PG is the full Korean payment-gateway product
+
+    offering card, bank-transfer, point, and KakaoPay
+
+    wallet acceptance for enterprise merchants.
+  humanURL: https://developers.kakaopay.com/docs/payment/pg
+  baseURL: https://open-api.kakaopay.com
+  tags:
+  - Payment Gateway
+  - Cards
+  - Bank Transfer
+  - Korea
+  properties:
+  - type: Documentation
+    url: https://developers.kakaopay.com/docs/payment/pg
+- aid: kakao:kogpt
+  name: KoGPT API
+  description: >
+    KoGPT is Kakao Brain's Korean-language large language model.
+
+    The KoGPT API provides text generation, summarization,
+
+    paraphrasing, and classification for Korean text.
+  humanURL: https://developers.kakao.com/docs/latest/en/kogpt/rest-api
+  baseURL: https://api.kakaobrain.com
+  tags:
+  - LLM
+  - Generative AI
+  - Korean
+  - KoGPT
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/kogpt/rest-api
+- aid: kakao:karlo
+  name: Karlo (Text-to-Image) API
+  description: >
+    Karlo is Kakao Brain's diffusion-based text-to-image
+
+    generation API, supporting Korean and English prompts and
+
+    multiple aspect ratios.
+  humanURL: https://developers.kakao.com/docs/latest/en/karlo/rest-api
+  baseURL: https://api.kakaobrain.com
+  tags:
+  - Text-to-Image
+  - Generative AI
+  - Diffusion
+  - Karlo
+  properties:
+  - type: Documentation
+    url: https://developers.kakao.com/docs/latest/en/karlo/rest-api
+- aid: kakao:kakaomobility-business
+  name: KakaoMobility Business API
+  description: >
+    KakaoMobility's Business API powers KakaoT corporate
+
+    mobility — letting enterprise platforms book Kakao T taxi
+
+    rides, manage corporate accounts, and reconcile employee
+
+    trips for expense and HR systems.
+  humanURL: https://business.kakaomobility.com/
+  baseURL: https://api.kakaomobility.com
+  tags:
+  - Mobility
+  - Taxi
+  - Corporate
+  - Korea
+  properties:
+  - type: ProductPage
+    url: https://business.kakaomobility.com/
+- aid: kakao:kakao-oauth-api
+  name: Kakao OAuth API
+  description: Kakao Login OAuth 2.0 authorization, token, and logout flows.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/kakao-oauth-api-openapi.yml
+- aid: kakao:kakao-oidc-api
+  name: Kakao OIDC API
+  description: OpenID Connect discovery, JWKS, and user info.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - OIDC
+  properties:
+  - type: OpenAPI
+    url: openapi/kakao-oidc-api-openapi.yml
+- aid: kakao:kakao-service-terms-api
+  name: Kakao Service Terms API
+  description: Manage Kakao Sync service-terms consent.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - Service Terms
+  properties:
+  - type: OpenAPI
+    url: openapi/kakao-service-terms-api-openapi.yml
+- aid: kakao:kakao-user-api
+  name: Kakao User API
+  description: Logged-in user information, scopes, and account linking.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/kakao-user-api-openapi.yml
 features:
   - name: KakaoTalk Identity & Messaging
     description: Kakao Login and KakaoTalk Sharing / Message / Channel give apps deep integration with Korea's dominant messenger.

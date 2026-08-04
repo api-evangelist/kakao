@@ -1,0 +1,8 @@
+---
+title: "더 작고 강해진 Kanana SLM 개발"
+url: "https://tech.kakao.com/posts/826"
+date: "2026-07-27"
+author: "kaya.butter / ryan.u / wavy.jung"
+feed_url: "https://tech.kakao.com/feed/"
+---
+안녕하세요. 카카오의 AI 모델 개발을 담당하는 카나나 LLM 조직에서 언어모델을 개발하고 있는 Kaya, Ryan, Wavy 입니다. 지난 “작지만 강한 Kanana Nano 효율적으로 개발하기”에서 비용 효율적으로 SLM(Small Language Model)을 개발하는 방법에 대해서 소개드렸었는데요, 이번 글에서는 더 강력해져서 돌아온 카카오의 두 번째 SLM 시리즈를 소개드리고자 합니다.

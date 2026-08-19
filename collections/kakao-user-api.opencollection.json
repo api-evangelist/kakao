@@ -1,0 +1,154 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kakao Login REST OAuth User API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve current user info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/user/me",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return profile and account information for the access-token holder."
+        },
+        {
+          "info": {
+            "name": "Retrieve current user info (POST)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v2/user/me",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "property_keys",
+                  "value": ""
+                },
+                {
+                  "name": "secure_resource",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "POST variant of /v2/user/me that accepts a form-encoded property filter."
+        },
+        {
+          "info": {
+            "name": "Retrieve multiple users' info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/app/users",
+            "params": [
+              {
+                "name": "target_ids",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "Authorization",
+              "value": "{{Authorization}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Return profile and account information for multiple users (Admin Key required)."
+        },
+        {
+          "info": {
+            "name": "Invalidate user tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v1/user/logout",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Invalidate the current user's Kakao tokens issued for this app."
+        },
+        {
+          "info": {
+            "name": "Unlink user from the app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v1/user/unlink",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Unlink the user's Kakao account from the calling app."
+        },
+        {
+          "info": {
+            "name": "Check user consent scopes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/user/scopes",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return the list of consents currently granted by the user."
+        },
+        {
+          "info": {
+            "name": "Revoke specific user scopes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://kauth.kakao.com/v2/user/revoke/scopes",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "scopes",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Revoke one or more consents granted by the user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

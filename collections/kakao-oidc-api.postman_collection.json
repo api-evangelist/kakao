@@ -1,0 +1,284 @@
+{
+  "item": [
+    {
+      "id": "aae3d55b-4d80-471a-ba96-974935eac5bc",
+      "name": "OIDC",
+      "description": {
+        "content": "OpenID Connect discovery, JWKS, and user info.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6fa661ad-c993-4a9c-bc61-2028d3d95dfc",
+          "name": "OIDC user info",
+          "request": {
+            "name": "OIDC user info",
+            "description": {
+              "content": "Retrieve OpenID Connect user information for the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "oidc",
+                "userinfo"
+              ],
+              "host": [
+                "kapi",
+                "kakao",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d5e441b8-ed86-4f9a-a208-80d375d9f35d",
+              "name": "OIDC user info payload.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "oidc",
+                    "userinfo"
+                  ],
+                  "host": [
+                    "kapi",
+                    "kakao",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea88663b-d98b-4a87-b809-d202c9077542",
+          "name": "OIDC discovery document",
+          "request": {
+            "name": "OIDC discovery document",
+            "description": {
+              "content": "Return the OpenID Connect discovery metadata for Kakao Login.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                ".well-known",
+                "openid-configuration"
+              ],
+              "host": [
+                "kauth",
+                "kakao",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "839e9de4-789e-4a17-a793-76b13d2264d4",
+              "name": "OIDC discovery document.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ".well-known",
+                    "openid-configuration"
+                  ],
+                  "host": [
+                    "kauth",
+                    "kakao",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59dc37fc-9e26-4f7e-9f19-96f1b3558c8b",
+          "name": "OIDC public signing keys",
+          "request": {
+            "name": "OIDC public signing keys",
+            "description": {
+              "content": "Return the public JWKS used to verify Kakao-issued ID tokens.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                ".well-known",
+                "jwks.json"
+              ],
+              "host": [
+                "kauth",
+                "kakao",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "19797c25-6a4d-4f8a-94bc-35b568dcd267",
+              "name": "JWKS payload.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    ".well-known",
+                    "jwks.json"
+                  ],
+                  "host": [
+                    "kauth",
+                    "kakao",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://kauth.kakao.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "26735ddc-2c90-41fa-a36e-36b76737d48f",
+    "name": "Kakao Login REST OAuth OIDC API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Kakao Login (OAuth 2.0 / OpenID Connect), Kakao user management, consent and service-terms management, and OIDC discovery. Apps authenticate users with Kakao OAuth and then call the kapi.kakao.com user endpoints with a Bearer access token or, for app-level operations, the Kakao app Admin Key.\n\nContact Support:\n Name: Kakao Developers",
+      "type": "text/plain"
+    }
+  }
+}

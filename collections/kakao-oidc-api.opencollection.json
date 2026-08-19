@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kakao Login REST OAuth OIDC API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OIDC",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OIDC user info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v1/oidc/userinfo",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Retrieve OpenID Connect user information for the authenticated user."
+        },
+        {
+          "info": {
+            "name": "OIDC discovery document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/.well-known/openid-configuration"
+          },
+          "docs": "Return the OpenID Connect discovery metadata for Kakao Login."
+        },
+        {
+          "info": {
+            "name": "OIDC public signing keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/.well-known/jwks.json"
+          },
+          "docs": "Return the public JWKS used to verify Kakao-issued ID tokens."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

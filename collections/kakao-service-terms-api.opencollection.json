@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Kakao Login REST OAuth Service Terms API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Terms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check service-terms consent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://kauth.kakao.com/v2/user/service_terms",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Return Kakao Sync service-terms consent for the user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

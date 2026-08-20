@@ -38,6 +38,17 @@ tags:
   - Search
   - Korea
   - Identity
+  - Authentication
+  - KakaoTalk
+  - LLM
+tags_raw:
+  - Messaging
+  - Maps
+  - Navigation
+  - Payments
+  - Search
+  - Korea
+  - Identity
   - OAuth2
   - KakaoTalk
   - LLM
@@ -61,6 +72,11 @@ apis:
   humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
   baseURL: https://kapi.kakao.com
   tags:
+  - Identity
+  - Authentication
+  - Login
+  - Korea
+  tags_raw:
   - Identity
   - OAuth2
   - Login
@@ -121,6 +137,10 @@ apis:
   tags:
   - Messaging
   - KakaoTalk
+  - Notification
+  tags_raw:
+  - Messaging
+  - KakaoTalk
   - Notifications
   properties:
   - type: Documentation
@@ -138,6 +158,11 @@ apis:
   humanURL: https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common
   baseURL: https://kapi.kakao.com
   tags:
+  - KakaoTalk
+  - Channel
+  - Notification
+  - BizMessage
+  tags_raw:
   - KakaoTalk
   - Channel
   - Notifications
@@ -173,6 +198,10 @@ apis:
   humanURL: https://developers.kakao.com/docs/latest/en/kakaostory/common
   baseURL: https://kapi.kakao.com
   tags:
+  - Social
+  - KakaoStory
+  - Timelines
+  tags_raw:
   - Social
   - KakaoStory
   - Timeline
@@ -249,6 +278,11 @@ apis:
   - Search
   - Daum
   - Web
+  - Image
+  tags_raw:
+  - Search
+  - Daum
+  - Web
   - Images
   properties:
   - type: Documentation
@@ -286,6 +320,11 @@ apis:
   humanURL: https://developers.kakaopay.com/docs/payment/online/subscription-payment
   baseURL: https://open-api.kakaopay.com
   tags:
+  - Payments
+  - Subscription
+  - Recurring
+  - KakaoPay
+  tags_raw:
   - Payments
   - Subscriptions
   - Recurring
@@ -373,6 +412,8 @@ apis:
   humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
   baseURL: https://kapi.kakao.com
   tags:
+  - Authentication
+  tags_raw:
   - OAuth
   properties:
   - type: OpenAPI

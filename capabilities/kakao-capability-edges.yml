@@ -1,0 +1,45 @@
+slug: kakao
+provider: Kakao
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: OAuth
+  spec_file: kakao-oauth-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: GET /oauth/authorize Request OAuth authorization code; POST /oauth/token Exchange or refresh
+    OAuth tokens
+  reason: Pure OAuth 2.0 authorization/token/logout endpoints — identity and access management (federated
+    login), a technical authentication capability rather than an industry business capability.
+- tag: OIDC
+  spec_file: kakao-oidc-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: GET /.well-known/openid-configuration oidcDiscovery OIDC discovery document; GET /.well-known/jwks.json
+    OIDC public signing keys
+  reason: OpenID Connect discovery, JWKS and userinfo endpoints implement federated identity — Identity
+    & Access Management.
+- tag: User
+  spec_file: kakao-user-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /v1/user/unlink Unlink user from the app; GET /v2/user/scopes Check user consent scopes;
+    POST /v2/user/revoke/scopes Revoke specific user scopes
+  reason: Operations manage logged-in user profiles, token invalidation, app linkage and consent scopes
+    for Kakao Login — identity and access management of end-user accounts, not customer master data.

@@ -418,18 +418,6 @@ apis:
   properties:
   - type: ProductPage
     url: https://business.kakaomobility.com/
-- aid: kakao:kakao-oauth-api
-  name: Kakao OAuth API
-  description: Kakao Login OAuth 2.0 authorization, token, and logout flows.
-  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
-  baseURL: https://kapi.kakao.com
-  tags:
-  - Authentication
-  tags_raw:
-  - OAuth
-  properties:
-  - type: OpenAPI
-    url: openapi/kakao-oauth-api-openapi.yml
 - aid: kakao:kakao-oidc-api
   name: Kakao OIDC API
   description: OpenID Connect discovery, JWKS, and user info.
@@ -460,6 +448,16 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/kakao-user-api-openapi.yml
+- aid: kakao:kakao-oauth-api
+  name: Kakao O Auth API
+  description: Kakao Login OAuth 2.0 authorization, token, and logout flows.
+  humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
+  baseURL: https://kapi.kakao.com
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/kakao-oauth-api-openapi.yml
 features:
   - name: KakaoTalk Identity & Messaging
     description: Kakao Login and KakaoTalk Sharing / Message / Channel give apps deep integration with Korea's dominant messenger.

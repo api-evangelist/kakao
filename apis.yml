@@ -536,6 +536,12 @@ authentication:
   - type: SecretKey
     description: KakaoPay APIs authenticate with merchant-issued Secret Keys for payment, cancellation, and refund operations.
 common:
+  - type: Plans
+    url: plans/kakao-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/kakao-rate-limits.yml
+  - type: FinOps
+    url: finops/kakao-finops.yml
   - type: CapabilityMap
     url: capabilities/kakao-capability-edges.yml
     name: Kakao Business Capability Map

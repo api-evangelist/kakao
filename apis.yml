@@ -421,6 +421,11 @@ apis:
   humanURL: https://developers.kakao.com/docs/latest/en/karlo/rest-api
   baseURL: https://api.kakaobrain.com
   tags:
+  - Image Generation
+  - Generative AI
+  - Diffusion Models
+  - Karlo
+  tags_raw:
   - Text-to-Image
   - Generative AI
   - Diffusion
@@ -459,6 +464,8 @@ apis:
   humanURL: https://developers.kakao.com/docs/latest/en/kakaologin/common
   baseURL: https://kapi.kakao.com
   tags:
+  - OpenID Connect
+  tags_raw:
   - OIDC
   properties:
   - type: OpenAPI

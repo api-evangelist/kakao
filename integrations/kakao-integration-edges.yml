@@ -1,0 +1,43 @@
+edges:
+- partner_name: Korea MyData integrated authentication bodies (MyData Support Center participants)
+  partner: null
+  partner_match: register
+  type: register
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.mydatacenter.or.kr:3441/myd/intro/sub3.do
+  category: Korean MyData integrated authentication body (identity verification / e-signature)
+  contract_reference:
+    register: Korea MyData integrated authentication bodies (MyData Support Center participants)
+    spec_file: null
+    standard: null
+    role: authentication-provider
+    registrations:
+    - registered_name: 카카오
+      register_country: KR
+      matched_domain: kakaocorp.com
+      matched_by: domain
+      register_website: https://www.kakaocorp.com
+      register_sector: electronic-signature authentication provider
+      identity: wikidata Q17684312 'Kakao' (Korean label 카카오) -> English name for the name check
+    signal_note: 'participation only: listed by the MyData Support Center (Korea Credit Information Services, for
+      the FSC); no conformance certification is published'
+    detected_by: sweep-korea-mydata-operators.py
+    detected: '2026-10-22'
+    identity_source: wikidata (Korean label -> English label / P856; labelled provenance step, Kin 2026-10-15 decision
+      1)
+  detected_by: sweep-korea-mydata-operators.py
+  first_seen: '2026-10-22'
+generated: '2026-10-22'
+method: searched
+source:
+- https://www.mydatacenter.or.kr:3441/myd/index/index.do
+- https://www.mydatacenter.or.kr:3441/myd/intro/sub3.do
+- https://www.mydatacenter.or.kr:3441/myd/bbsctt/notice1/notice/076e7a70-9d5c-4bad-9ee5-2bcb5153b6ed/35/bbsctt.do
+- https://www.mydatacenter.or.kr:3441/myd/bbsctt/notice1/notice/37ebe6f6-b9ae-4692-9db2-44e5f434bbd3/36/bbsctt.do
+checked:
+- https://www.mydatacenter.or.kr:3441/myd/bbsctt/notice1/notice/076e7a70-9d5c-4bad-9ee5-2bcb5153b6ed/35/bbsctt.do
+- https://www.mydatacenter.or.kr:3441/myd/bbsctt/notice1/notice/37ebe6f6-b9ae-4692-9db2-44e5f434bbd3/36/bbsctt.do
+- https://www.mydatacenter.or.kr:3441/myd/index/index.do
+- https://www.mydatacenter.or.kr:3441/myd/intro/sub3.do

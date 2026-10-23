@@ -29,6 +29,33 @@ edges:
       1)
   detected_by: sweep-korea-mydata-operators.py
   first_seen: '2026-10-22'
+- partner_name: Hugging Face (hugging-face-hub)
+  partner: hugging-face
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: hugging-face-hub
+  evidence: https://huggingface.co/kakaocorp
+  mirror_of: hugging-face/integrations/hugging-face-integration-edges.yml
+  apps:
+  - kakaocorp/kanana-1.5-v-3b-instruct
+  - kakaocorp/kanana-2-3b-instruct
+  - kakaocorp/kanana-1.5-8b-instruct-2505
+  - kakaocorp/kanana-1.5-2.1b-instruct-2505
+  - kakaocorp/kanana-1.5-8b-base
+  - kakaocorp/kanana-2-1.3b-instruct
+  - kakaocorp/kanana-2-30b-a3b-instruct-2601
+  - kakaocorp/kanana-1.5-2.1b-base
+  - kakaocorp
+  listing_count: 2
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Hugging Face Hub models
+  badges:
+  - Verified publisher (Hugging Face verified organisation)
 generated: '2026-10-22'
 method: searched
 source:
@@ -41,3 +68,4 @@ checked:
 - https://www.mydatacenter.or.kr:3441/myd/bbsctt/notice1/notice/37ebe6f6-b9ae-4692-9db2-44e5f434bbd3/36/bbsctt.do
 - https://www.mydatacenter.or.kr:3441/myd/index/index.do
 - https://www.mydatacenter.or.kr:3441/myd/intro/sub3.do
+- hugging-face/integrations/hugging-face-integration-edges.yml

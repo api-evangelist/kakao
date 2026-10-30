@@ -1,4 +1,4 @@
-# Kakao (kakao)
+# Kakao
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,446 +64,140 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Kakao Corp. is the South Korean technology group behind
-KakaoTalk — the dominant mobile messenger in Korea — along with
-KakaoPay (payments), Kakao Bank (digital bank), KakaoMobility
-(taxi, navigation, parking), KakaoMap, Kakao Games, Kakao
-Entertainment (Melon, Kakao Webtoon, Daum), and KakaoCloud.
-Kakao runs its public developer platform at developers.kakao.com,
-exposing REST APIs for Kakao Login (OAuth 2.0), Kakao Sync,
-KakaoTalk Share / Message / Friend Picker / Channel, KakaoStory,
-KakaoNavi, KakaoMap, Local search, Daum Search, KakaoPay (PG /
-online easy-pay), and KoGPT generative AI. KakaoMobility and
-Kakao Enterprise / KakaoCloud each operate additional partner-
-facing developer surfaces.
+Kakao Corp. is the South Korean technology group behind KakaoTalk — the dominant mobile messenger in Korea — along with KakaoPay (payments), Kakao Bank (digital bank), KakaoMobility (taxi, navigation, parking), KakaoMap, Kakao Games, Kakao Entertainment (Melon, Kakao Webtoon, Daum), and KakaoCloud. Kakao runs its public developer platform at developers.kakao.com, exposing REST APIs for Kakao Login (OAuth 2.0), Kakao Sync, KakaoTalk Share / Message / Friend Picker / Channel, KakaoStory, KakaoNavi, KakaoMap, Local search, Daum Search, KakaoPay (PG / online easy-pay), and KoGPT generative AI. KakaoMobility and Kakao Enterprise / KakaoCloud each operate additional partner- facing developer surfaces.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/kakao/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/kakao/refs/heads/main/apis.yml)
+**Areas:** Messaging · Maps · Navigation · Payments · Search · South Korea · Identity · Authentication · KakaoTalk · LLM
 
-## Scope
+## Kakao on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** Public
+Everything profiled for Kakao is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kakao/](https://apis.io/providers/kakao/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (21)
 
-- Messaging
-- Maps
-- Navigation
-- Payments
-- Search
-- Korea
-- Identity
-- OAuth2
-- KakaoTalk
-- LLM
+- [Kakao Login (OAuth 2.0) API](https://apis.io/apis/kakao/kakao-login/) — Kakao Login is Korea's most widely used social-identity provider, built on OAuth 2.0 / OpenID Connect. The API issues access and refresh tokens, returns…
+- [Kakao Sync API](https://apis.io/apis/kakao/kakao-sync/) — Kakao Sync extends Kakao Login with a one-click signup experience that simultaneously creates an in-app account and (optionally) adds a KakaoTalk Channel…
+- [KakaoTalk Sharing API](https://apis.io/apis/kakao/kakaotalk-share/) — KakaoTalk Sharing lets external apps and websites share rich "Feed", "List", "Location", "Calendar", "Commerce", and custom-template messages into KakaoTalk…
+- [KakaoTalk Message API](https://apis.io/apis/kakao/kakaotalk-message/) — KakaoTalk Message sends template-based messages from a Kakao-Linked app to the authenticated user themselves or to consenting KakaoTalk friends.
+- [KakaoTalk Channel API](https://apis.io/apis/kakao/kakaotalk-channel/) — KakaoTalk Channel APIs manage a brand's Channel relationship with users — including add-friend status, Alimtalk-style notification messages (delivered via…
+- [KakaoTalk Friends API](https://apis.io/apis/kakao/kakaotalk-friends/) — Returns the list of KakaoTalk friends who have also signed into a Kakao-Linked app, for friend-picker, invite, and social-feature experiences subject to…
+- [KakaoStory API](https://apis.io/apis/kakao/kakaostory/) — KakaoStory APIs let apps publish posts and read user content on Kakao's social timeline product (legacy but still supported in Korea).
+- [Kakao Local API](https://apis.io/apis/kakao/local/) — Kakao Local API offers address-to-coordinate (and reverse) geocoding, keyword and category place search, and administrative-region lookup for Korean…
+- [KakaoMap Web / JavaScript SDK](https://apis.io/apis/kakao/kakaomap-web/) — KakaoMap exposes Korean tile maps, markers, overlays, static maps, and roadview / panorama services for web and mobile applications.
+- [KakaoNavi (Driving Directions) API](https://apis.io/apis/kakao/kakaonavi/) — KakaoNavi exposes driving directions, multi-waypoint route planning, ETA, and Future Driving directions (predictive ETA), and a native "Send to Kakao Navi"…
+- [Daum Search API](https://apis.io/apis/kakao/daum-search/) — Daum Search API returns search results from Daum's web, vClip video, image, blog, book, café, and Q&A indexes, complementing Kakao Local for content discovery.
+- [KakaoPay Online (Easy-Pay) API](https://apis.io/apis/kakao/kakaopay-online/) — KakaoPay Online (also known as KakaoPay Easy-Pay) lets online merchants accept KakaoPay wallet payments for one-time and subscription purchases, with order…
+- [KakaoPay Subscription Payments API](https://apis.io/apis/kakao/kakaopay-subscription/) — Subscription Payments API enables recurring KakaoPay billing for SaaS, content, and membership models — using a one-time SID (subscription ID) handshake…
+- [KakaoPay PG (Payment Gateway) API](https://apis.io/apis/kakao/kakaopay-pg/) — KakaoPay PG is the full Korean payment-gateway product offering card, bank-transfer, point, and KakaoPay wallet acceptance for enterprise merchants.
+- [KoGPT API](https://apis.io/apis/kakao/kogpt/) — KoGPT is Kakao Brain's Korean-language large language model. The KoGPT API provides text generation, summarization, paraphrasing, and classification for…
+- [Karlo (Text-to-Image) API](https://apis.io/apis/kakao/karlo/) — Karlo is Kakao Brain's diffusion-based text-to-image generation API, supporting Korean and English prompts and multiple aspect ratios.
+- [KakaoMobility Business API](https://apis.io/apis/kakao/kakaomobility-business/) — KakaoMobility's Business API powers KakaoT corporate mobility — letting enterprise platforms book Kakao T taxi rides, manage corporate accounts, and…
+- [Kakao OIDC API](https://apis.io/apis/kakao/kakao-oidc-api/) — OpenID Connect discovery, JWKS, and user info.
+- [Kakao Service Terms API](https://apis.io/apis/kakao/kakao-service-terms-api/) — Manage Kakao Sync service-terms consent.
+- [Kakao User API](https://apis.io/apis/kakao/kakao-user-api/) — Logged-in user information, scopes, and account linking.
+- [Kakao O Auth API](https://apis.io/apis/kakao/kakao-oauth-api/) — Kakao Login OAuth 2.0 authorization, token, and logout flows.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Kakao Login (OAuth 2.0) API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Kakao Login is Korea's most widely used social-identity
-provider, built on OAuth 2.0 / OpenID Connect. The API
-issues access and refresh tokens, returns user profile
-attributes (nickname, profile image, email, gender, age
-range), and supports auto-linking to in-app accounts.
+- [Kakao Agentic Access](https://apis.io/agentic-access/kakao/kakao-agentic-access/)
 
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/kakaologin/common](https://developers.kakao.com/docs/latest/en/kakaologin/common)
-- **Base URL:** `https://kapi.kakao.com`
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Identity
-- OAuth2
-- Login
-- Korea
+- [Kakao Login REST API](https://apis.io/collections/kakao/open-kakao/)
+- [Kakao Login REST OAuth API](https://apis.io/collections/kakao/open-kakao-oauth-api/)
+- [Kakao Login REST OAuth OIDC API](https://apis.io/collections/kakao/open-kakao-oidc-api/)
+- [Kakao Login REST OAuth Service Terms API](https://apis.io/collections/kakao/open-kakao-service-terms-api/)
+- [Kakao Login REST OAuth User API](https://apis.io/collections/kakao/open-kakao-user-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://developers.kakao.com/docs/latest/en/kakaologin/common)
-- [R E S T Reference](https://developers.kakao.com/docs/latest/en/kakaologin/rest-api)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Kakao Sync API
+- [Kakao Authentication](https://apis.io/security/kakao/kakao-authentication/)
+- [Kakao Domain Security](https://apis.io/security/kakao/kakao-domain-security/)
 
-Kakao Sync extends Kakao Login with a one-click signup
-experience that simultaneously creates an in-app account
-and (optionally) adds a KakaoTalk Channel friendship for
-Korean services.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/kakaosync/common](https://developers.kakao.com/docs/latest/en/kakaosync/common)
-- **Base URL:** `https://kapi.kakao.com`
+Published plans, tiers and prices.
 
-#### Tags
+- [Kakao Plans Pricing](https://apis.io/plans/kakao/kakao-plans-pricing/)
 
-- Identity
-- Onboarding
-- KakaoTalk
-- Korea
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://developers.kakao.com/docs/latest/en/kakaosync/common)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Kakao Rate Limits](https://apis.io/rate-limits/kakao/kakao-rate-limits/)
 
-### KakaoTalk Sharing API
+#### FinOps (1)
 
-KakaoTalk Sharing lets external apps and websites share rich
-"Feed", "List", "Location", "Calendar", "Commerce", and
-custom-template messages into KakaoTalk chats.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/message/common](https://developers.kakao.com/docs/latest/en/message/common)
-- **Base URL:** `https://kapi.kakao.com`
+- [Kakao Finops](https://apis.io/finops/kakao/kakao-finops/)
 
-#### Tags
+## Where to find this API
 
-- Messaging
-- Sharing
-- KakaoTalk
-- Templates
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/message/common)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoTalk Message API
-
-KakaoTalk Message sends template-based messages from a
-Kakao-Linked app to the authenticated user themselves or
-to consenting KakaoTalk friends.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/message/rest-api](https://developers.kakao.com/docs/latest/en/message/rest-api)
-- **Base URL:** `https://kapi.kakao.com`
-
-#### Tags
-
-- Messaging
-- KakaoTalk
-- Notifications
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/message/rest-api)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoTalk Channel API
-
-KakaoTalk Channel APIs manage a brand's Channel
-relationship with users — including add-friend status,
-Alimtalk-style notification messages (delivered via
-Kakao's BizMessage partners), and consult routing.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common)
-- **Base URL:** `https://kapi.kakao.com`
-
-#### Tags
-
-- KakaoTalk
-- Channel
-- Notifications
-- BizMessage
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoTalk Friends API
-
-Returns the list of KakaoTalk friends who have also signed
-into a Kakao-Linked app, for friend-picker, invite, and
-social-feature experiences subject to user consent.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/message/rest-api#friend](https://developers.kakao.com/docs/latest/en/message/rest-api#friend)
-- **Base URL:** `https://kapi.kakao.com`
-
-#### Tags
-
-- KakaoTalk
-- Friends
-- Social Graph
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/message/rest-api#friend)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoStory API
-
-KakaoStory APIs let apps publish posts and read user
-content on Kakao's social timeline product (legacy but
-still supported in Korea).
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/kakaostory/common](https://developers.kakao.com/docs/latest/en/kakaostory/common)
-- **Base URL:** `https://kapi.kakao.com`
-
-#### Tags
-
-- Social
-- KakaoStory
-- Timeline
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/kakaostory/common)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Kakao Local API
-
-Kakao Local API offers address-to-coordinate (and reverse)
-geocoding, keyword and category place search, and
-administrative-region lookup for Korean addresses and POIs.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/local/dev-guide](https://developers.kakao.com/docs/latest/en/local/dev-guide)
-- **Base URL:** `https://dapi.kakao.com`
-
-#### Tags
-
-- Local Search
-- Geocoding
-- Places
-- Korea
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/local/dev-guide)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoMap Web / JavaScript SDK
-
-KakaoMap exposes Korean tile maps, markers, overlays,
-static maps, and roadview / panorama services for web and
-mobile applications.
-
-- **Human URL:** [https://apis.map.kakao.com/web/documentation/](https://apis.map.kakao.com/web/documentation/)
-- **Base URL:** `https://dapi.kakao.com`
-
-#### Tags
-
-- Maps
-- Tiles
-- Roadview
-- Korea
-
-#### Properties
-
-- [Documentation](https://apis.map.kakao.com/web/documentation/)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoNavi (Driving Directions) API
-
-KakaoNavi exposes driving directions, multi-waypoint route
-planning, ETA, and Future Driving directions (predictive
-ETA), and a native "Send to Kakao Navi" handoff for Korean
-mobile apps.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/kakaonavi/common](https://developers.kakao.com/docs/latest/en/kakaonavi/common)
-- **Base URL:** `https://apis-navi.kakaomobility.com`
-
-#### Tags
-
-- Navigation
-- Directions
-- Driving
-- Korea
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/kakaonavi/common)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Daum Search API
-
-Daum Search API returns search results from Daum's web,
-vClip video, image, blog, book, café, and Q&A indexes,
-complementing Kakao Local for content discovery.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/daum-search/common](https://developers.kakao.com/docs/latest/en/daum-search/common)
-- **Base URL:** `https://dapi.kakao.com`
-
-#### Tags
-
-- Search
-- Daum
-- Web
-- Images
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/daum-search/common)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoPay Online (Easy-Pay) API
-
-KakaoPay Online (also known as KakaoPay Easy-Pay) lets
-online merchants accept KakaoPay wallet payments for
-one-time and subscription purchases, with order create,
-approve, cancel, and refund operations.
-
-- **Human URL:** [https://developers.kakaopay.com/docs/payment/online/single-payment](https://developers.kakaopay.com/docs/payment/online/single-payment)
-- **Base URL:** `https://open-api.kakaopay.com`
-
-#### Tags
-
-- Payments
-- KakaoPay
-- Checkout
-- Korea
-
-#### Properties
-
-- [Documentation](https://developers.kakaopay.com/docs/payment/online/single-payment)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoPay Subscription Payments API
-
-Subscription Payments API enables recurring KakaoPay
-billing for SaaS, content, and membership models — using
-a one-time SID (subscription ID) handshake followed by
-server-side recurring charge calls.
-
-- **Human URL:** [https://developers.kakaopay.com/docs/payment/online/subscription-payment](https://developers.kakaopay.com/docs/payment/online/subscription-payment)
-- **Base URL:** `https://open-api.kakaopay.com`
-
-#### Tags
-
-- Payments
-- Subscriptions
-- Recurring
-- KakaoPay
-
-#### Properties
-
-- [Documentation](https://developers.kakaopay.com/docs/payment/online/subscription-payment)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoPay PG (Payment Gateway) API
-
-KakaoPay PG is the full Korean payment-gateway product
-offering card, bank-transfer, point, and KakaoPay
-wallet acceptance for enterprise merchants.
-
-- **Human URL:** [https://developers.kakaopay.com/docs/payment/pg](https://developers.kakaopay.com/docs/payment/pg)
-- **Base URL:** `https://open-api.kakaopay.com`
-
-#### Tags
-
-- Payment Gateway
-- Cards
-- Bank Transfer
-- Korea
-
-#### Properties
-
-- [Documentation](https://developers.kakaopay.com/docs/payment/pg)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KoGPT API
-
-KoGPT is Kakao Brain's Korean-language large language model.
-The KoGPT API provides text generation, summarization,
-paraphrasing, and classification for Korean text.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/kogpt/rest-api](https://developers.kakao.com/docs/latest/en/kogpt/rest-api)
-- **Base URL:** `https://api.kakaobrain.com`
-
-#### Tags
-
-- LLM
-- Generative AI
-- Korean
-- KoGPT
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/kogpt/rest-api)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Karlo (Text-to-Image) API
-
-Karlo is Kakao Brain's diffusion-based text-to-image
-generation API, supporting Korean and English prompts and
-multiple aspect ratios.
-
-- **Human URL:** [https://developers.kakao.com/docs/latest/en/karlo/rest-api](https://developers.kakao.com/docs/latest/en/karlo/rest-api)
-- **Base URL:** `https://api.kakaobrain.com`
-
-#### Tags
-
-- Text-to-Image
-- Generative AI
-- Diffusion
-- Karlo
-
-#### Properties
-
-- [Documentation](https://developers.kakao.com/docs/latest/en/karlo/rest-api)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### KakaoMobility Business API
-
-KakaoMobility's Business API powers KakaoT corporate
-mobility — letting enterprise platforms book Kakao T taxi
-rides, manage corporate accounts, and reconcile employee
-trips for expense and HR systems.
-
-- **Human URL:** [https://business.kakaomobility.com/](https://business.kakaomobility.com/)
-- **Base URL:** `https://api.kakaomobility.com`
-
-#### Tags
-
-- Mobility
-- Taxi
-- Corporate
-- Korea
-
-#### Properties
-
-- [Product Page](https://business.kakaomobility.com/)
-- [Postman Collection](collections/kakao.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kakao.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Corporate Website](https://www.kakaocorp.com/)
-- [Developer Portal](https://developers.kakao.com/)
+- [Website](https://www.kakaocorp.com/)
 - [Documentation](https://developers.kakao.com/docs)
-- [Kakao Talk](https://www.kakaocorp.com/page/service/service/KakaoTalk)
-- [Kakao Map Web](https://apis.map.kakao.com/)
-- [Kakao Pay Developers](https://developers.kakaopay.com/)
-- [Kakao Mobility](https://www.kakaomobility.com/)
-- [Kakao Cloud](https://www.kakaocloud.com/)
-- [Kakao Brain](https://www.kakaobrain.com/)
-- [Git Hub](https://github.com/kakao)
-- [Tech Blog](https://tech.kakao.com/)
-- [Investor Relations](https://www.kakaocorp.com/page/ir/)
-- [Newsroom](https://www.kakaocorp.com/page/detail)
-- [Careers](https://careers.kakao.com/)
-- [LinkedIn](https://www.linkedin.com/company/kakaocorp/)
+- [Blog](https://tech.kakao.com/feed/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 67.0 |
+| Contract quality | 47.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 5.3 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.0** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kakao/](https://apis.io/providers/kakao/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kakao: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kakao/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
